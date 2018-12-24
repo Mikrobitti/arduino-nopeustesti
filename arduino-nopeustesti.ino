@@ -4,24 +4,37 @@ Serial.println("Aloitetaan!");
 }
 
 void loop() {
-  long alku, loppu, aika;
+  long alku, loppu, aika, laskutoimituksia, kokonaislukulaskentanopeus, liukulukulaskentanopeus;
+  laskutoimituksia=1000000;
+  
+  // Kokonaislukulaskentanopeuden mittaus
   alku=millis();
-  for (long i=0; i<1000000; i++) {
+  for (long i=0; i<laskutoimituksia; i++) {
     long j=(long)millis();
     j=i+j;
   }
   loppu=millis(); 
   aika=loppu-alku;
-  Serial.println("yhteenlasku");
-  Serial.println(aika);
+  Serial.print("Yhteenlasku: ");
+  Serial.print(aika);
+  Serial.println(" millisekuntia / miljoona kokonaislukulaskutoimitusta";
+  Serial.print("Kokonaislukulaskentanopeus: ");
+  kokonaislukulaskentanopeus = laskutoimituksia / aika;
+  Serial.print(kokonaislukulaskentanopeus);
+  Serial.println(" kokonaislukulaskua sekunnissa (OPS).");
   
+  // Liukulukulaskentanopeuden mittaus
   alku=millis();
-  for (float i=0; i<1000000; i++) {
+  for (float i=0; i<laskutoimituksia; i++) {
     float j=millis()/3.14159265;
   }
   loppu=millis();
   aika=loppu-alku;
-  Serial.println("jakolasku");
-  Serial.println(aika);
-  
+  Serial.print("Jakolasku: ");
+  Serial.print(aika);
+  Serial.println (" millisekuntia / miljoona liukulukulaskutoimitusta");
+  Serial.print("Liukulukulaskentanopeus: ");
+  liukulukulaskentanopeus = laskutoimituksia / aika;
+  Serial.print(liukulukulaskentanopeus);
+  Serial.println(" liukulukulaskua sekunnissa (FLOPS).");
 }
