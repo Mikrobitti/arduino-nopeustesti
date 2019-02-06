@@ -17,7 +17,7 @@ void loop() {
   aika=loppu-alku;
   Serial.print("Yhteenlasku: ");
   Serial.print(aika);
-  Serial.println(" millisekuntia / miljoona kokonaislukulaskutoimitusta";
+  Serial.println(" millisekuntia / miljoona kokonaislukulaskutoimitusta");
   Serial.print("Kokonaislukulaskentanopeus: ");
   kokonaislukulaskentanopeus = laskutoimituksia / aika;
   Serial.print(kokonaislukulaskentanopeus);
