@@ -21,7 +21,7 @@ void loop() {
   Serial.print("Kokonaislukulaskentanopeus: ");
   kokonaislukulaskentanopeus = laskutoimituksia / aika;
   Serial.print(kokonaislukulaskentanopeus);
-  Serial.println(" kokonaislukulaskua sekunnissa (OPS).");
+  Serial.println(" tuhatta kokonaislukulaskua sekunnissa (OPS).");
   
   // Liukulukulaskentanopeuden mittaus
   alku=millis();
@@ -36,5 +36,5 @@ void loop() {
   Serial.print("Liukulukulaskentanopeus: ");
   liukulukulaskentanopeus = laskutoimituksia / aika;
   Serial.print(liukulukulaskentanopeus);
-  Serial.println(" liukulukulaskua sekunnissa (FLOPS).");
+  Serial.println(" tuhatta liukulukulaskua sekunnissa (FLOPS).");
 }
